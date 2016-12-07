@@ -14,15 +14,21 @@
 #	i.e. LR-70-83-ATGCCT + LR-70-83-CGCGGAGA ----> LR-70-83
 #	
 #	ex command: sh combine-samples.sh LR70 < samples.txt
-#		
-#	The only argument required is the name of the population you have
-#	supplied in Caroyln's GBS.conf file.
-#_______________________________________________________________________________
-################################################################################
+#
+#	In order to run this script you must be in the directory that contains
+#	the .sam files.
+#	
+#	There are two arguments for the script:
+#	
+#	$pop --> the population name used for the GBS.conf file - i.e. LR70	
+#	$path --> full or relative path to the output directory - i.e. ../new-align
+#__________________________________________________________________________________
+###################################################################################
 
 echo "Combining samples"
 
 pop=$1
+path=$2
 
 while read line
 do
@@ -34,5 +40,5 @@ do
 	echo $filestocat
 	
 	#final command to concatenate sample names
-	cat $filestocat > ../align/$line\_$pop\_besthits.sam
+	cat $filestocat > $path/$line\_$pop\_besthits.sam
 done
