@@ -2,6 +2,9 @@
 #
 #	combine-names.sh 
 #	written by Connor Burbridge
+#	
+#	This script has been written to assist in the steps of a GBS pipeline
+#	written by Carolyn Caron and may not meet expectations for others!
 #
 #	For use when samples in a GBS analysis need to be concatenated prior
 #	calling SNPs. This script will take .sam files and use the cat command
@@ -31,5 +34,5 @@ do
 	echo $filestocat
 	
 	#final command to concatenate sample names
-	cat $filestocat > ../combined-align/$line\_$pop\_besthits.sam
+	cat $filestocat > ../align/$line\_$pop\_besthits.sam
 done
