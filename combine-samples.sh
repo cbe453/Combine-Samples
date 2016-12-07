@@ -9,7 +9,7 @@ do
 	
 	echo $filestocat
 
-	cat $filestocat > ../combined-align/$line\_besthits.sam
+	cat $filestocat > ../combined-align/$line\_LR70_besthits.sam
 
 	if test #? = 0
 	then 
